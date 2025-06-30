@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-cursive: var(--font-caveat);
+  --font-space-grotesk: var(--font-space-grotesk);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+@layer utilities {
+  .button-gradient {
+    background: linear-gradient(90deg, #4776e6 0%, #8e54e9 100%);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+.my-width {
+  width: 1350px;
+  max-width: 95%;
+}
+
+@media screen and (min-width: 1920px) {
+  .my-width {
+    width: 1600px;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .remove-btn-gradient-for-sm {
+    background: none;
+  }
+}
